@@ -24,15 +24,15 @@ if new_model == 1
   Model.GM = 4.902800118E12; %check this value; from wikipedia
   Model.Re = 1737400;
   Model.geoid = 'none';
-  Model.nmax = 179;     
+  Model.nmax = 100;     
   Model.correct_depth = 0;
   
   % Top layer
   Model.l1.bound = img2mx('Topography/LDEM_4.IMG',4);  % meters with respect to reference sphere
-  Model.l1.dens  = 2550;
+  Model.l1.dens  = 2850;
   
   % Second layer
-  Model.l2.bound = -50000+zeros(size(Model.l1.bound));     % meters with respect to reference sphere
+  Model.l2.bound = -38000+zeros(size(Model.l1.bound));     % meters with respect to reference sphere
   Model.l2.dens  = 3300;	   % Density in kg/m3
   
   % Bottom bound
@@ -52,10 +52,10 @@ end
 %%%%%%%%%%%%%%%%%%% Computation area %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% Part that cant be modified %%%%%%%%%%%%%%%%%%%%%%%
 
-latLim =    [-89.5 89.5 1];  % [deg] min latitude, max latitude, resolution latitude (preferable similar to latitude)
-lonLim =    [-180 180 1];% [deg] min longitude, max longitude, resolution longitude (preferable similar to latitude)
-height =    10.0; % height of computation above spheroid
-SHbounds =  [0 179]; % Truncation settings: lower limit, upper limit SH-coefficients used
+latLim =    [-89.5 89.5 0.25];  % [deg] min latitude, max latitude, resolution latitude (preferable similar to latitude)
+lonLim =    [-180 180 0.25];% [deg] min longitude, max longitude, resolution longitude (preferable similar to latitude)
+height =    0.0; % height of computation above spheroid
+SHbounds =  [0 100]; % Truncation settings: lower limit, upper limit SH-coefficients used
 
 %%%%%%%%%%%%%% Part that can be modified %%%%%%%%%%%%%%%%%%%%%%%
 

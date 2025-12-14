@@ -4,5 +4,4 @@ function Mx = txt2mx(filename)
 %   values arranged column-wise and automatically determines the dimensions.
 
 Mx = readmatrix(filename);
-Mx = Mx / 1000;          % convert to kilometers
 end
