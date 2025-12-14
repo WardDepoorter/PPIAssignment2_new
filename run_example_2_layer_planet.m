@@ -24,7 +24,7 @@ if new_model == 1
   Model.GM = 4.902800118E12; %check this value; from wikipedia
   Model.Re = 1737400;
   Model.geoid = 'none';
-  Model.nmax = 100;     
+  Model.nmax = 179;     
   Model.correct_depth = 0;
   
   % Top layer
@@ -52,10 +52,10 @@ end
 %%%%%%%%%%%%%%%%%%% Computation area %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% Part that cant be modified %%%%%%%%%%%%%%%%%%%%%%%
 
-latLim =    [-89.5 89.5 0.25];  % [deg] min latitude, max latitude, resolution latitude (preferable similar to latitude)
-lonLim =    [-180 180 0.25];% [deg] min longitude, max longitude, resolution longitude (preferable similar to latitude)
+latLim =    [-89.5 89.5 1];  % [deg] min latitude, max latitude, resolution latitude (preferable similar to latitude)
+lonLim =    [-180 180 1];% [deg] min longitude, max longitude, resolution longitude (preferable similar to latitude)
 height =    0.0; % height of computation above spheroid
-SHbounds =  [0 100]; % Truncation settings: lower limit, upper limit SH-coefficients used
+SHbounds =  [0 179]; % Truncation settings: lower limit, upper limit SH-coefficients used
 
 %%%%%%%%%%%%%% Part that can be modified %%%%%%%%%%%%%%%%%%%%%%%
 
